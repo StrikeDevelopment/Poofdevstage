@@ -1,5 +1,5 @@
 {
-  "name": "AtomBotv2",
+  "name": "PoofBot",
   "description": "This is a bot for pure moderations and in the future will add fun to it.",
   "version": "1.0.0",
   "main": "bot.js",
