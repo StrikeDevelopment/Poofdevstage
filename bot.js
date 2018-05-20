@@ -9,7 +9,6 @@ bot.on("ready", async () => {
 
  bot.user.setActivity("Development of Poof Bot" {type: "PLAYING"});
 
- //bot.user.setGame("activity for bot");
 });
 
 bot.on("message", async message => {
@@ -23,7 +22,6 @@ bot.on("message", async message => {
 
   if(cmd === `${prefix}kick`){
 
-    //!kick @daeshan askin for it
 
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!kUser) return message.channel.send("Can't find user!");
@@ -79,7 +77,6 @@ bot.on("message", async message => {
 
   if(cmd === `${prefix}report`){
 
-    //!report @ned this is the reason
 
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!rUser) return message.channel.send("Couldn't find user.");
