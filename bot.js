@@ -1,5 +1,4 @@
 const botconfig = require("./botconfig.json");
-const token = "NDQzNjcwODg2MzgyNTY3NDI0.DeKEvw.ttt4QFbctOmUpPvIZh6I4CGoWoE";
 const Discord = require("discord.js");
 
 const bot = new Discord.Client({disableEveryone: true});
@@ -7,7 +6,7 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.on("ready", async () => {
  console.log(`${bot.user.username} is online!`);
 
- bot.user.setActivity("Development of Poof Bot" {type: "PLAYING"});
+ bot.user.setActivity("Development of Poof Bot", {type: "PLAYING"});
 
 });
 
@@ -137,4 +136,4 @@ bot.on("message", async message => {
 
 });
 
-bot.login(tokenfile.token);
+bot.login("NDQzNjcwODg2MzgyNTY3NDI0.DeKEvw.ttt4QFbctOmUpPvIZh6I4CGoWoE");
