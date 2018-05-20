@@ -7,7 +7,7 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.on("ready", async () => {
  console.log(`${bot.user.username} is online!`);
 
- bot.user.setActivity("Development of AtomBot" {type: "PLAYING"});
+ bot.user.setActivity("Development of Poof Bot" {type: "PLAYING"});
 
  //bot.user.setGame("activity for bot");
 });
