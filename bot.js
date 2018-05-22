@@ -116,23 +116,23 @@ bot.on("message", async message => {
     .addField("Total Members", message.guild.memberCount);
 
     return message.channel.send(serverembed);
-  }
+ }
 
+    if (command === `${prefix}botinfo`) {
 
+        var botIcon = bot.user.displayAvatarURL
 
-  if(cmd === `${prefix}botinfo`){
+        var botEmbed = new discord.RichEmbed()
+            .setDescription("Bot Info")
+            .setColor("#4286f4")
+            .setThumbnail(botIcon)
+            .addField("Username:", bot.user.username)
+            .addField("Gemaakt op:", bot.user.createdAt)
+            .addField("Versie:", botConfig.version)
+            .addField("Maker/Developer:", botConfig.creator);
 
-    let bicon = bot.user.displayAvatarURL;
-    let botembed = new Discord.RichEmbed()
-    .setDescription("Bot Information")
-    .setColor("#15f153")
-    .setThumbnail(bicon)
-    .addField("Bot Name", bot.user.username)
-    .addField("Created On", bot.user.createdAt)
-    .addField("Owner of bot", bot.owner);
-
-    return message.channel.send(botembed);
-  }
+        return message.channel.send(botEmbed);
+    }
 
 });
 
