@@ -29,16 +29,17 @@ bot.on("message", async message => {
     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
 
     let kickEmbed = new Discord.RichEmbed()
-    .setDescription("~Kick~")
-    .setColor("#e56b00")
-    .addField("Kicked User", `${kUser} with ID ${kUser.id}`)
-    .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
-    .addField("Kicked In", message.channel)
-    .addField("Tiime", message.createdAt)
-    .addField("Reason", kReason);
+    .setTitle('~Kick~')
+    .setDescription('Kick Logger')
+    .setColor('#e56b00')
+    .addField("Kicked User", '`${kUser} with ID ${kUser.id}`')
+    .addField('Kicked By', '`<@${message.author.id}> with ID ${message.author.id}`')
+    .addField('Kicked In', 'message.channel')
+    .addField('Time', 'message.createdAt')
+    .addField('Reason', 'kReason');
 
-    let kickChannel = message.guild.channels.find(`name`, "incidents");
-    if(!kickChannel) return message.channel.send("Can't find incidents channel.");
+    let kickChannel = message.guild.channels.find(`name`, 'incidents');
+    if(!kickChannel) return message.channel.send('Can`t find incidents channel.');
 
     message.guild.member(kUser).kick(kReason);
     kickChannel.send(kickEmbed);
@@ -51,17 +52,17 @@ bot.on("message", async message => {
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!bUser) return message.channel.send("Can't find user!");
     let bReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("No can do pal!");
+    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send('No can do pal!');
     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
 
     let banEmbed = new Discord.RichEmbed()
-    .setDescription("~Ban~")
+    .setTitle('~Ban~')
     .setColor("#bc0000")
-    .addField("Banned User", `${bUser} with ID ${bUser.id}`)
-    .addField("Banned By", `<@${message.author.id}> with ID ${message.author.id}`)
-    .addField("Banned In", message.channel)
-    .addField("Time", message.createdAt)
-    .addField("Reason", bReason);
+    .addField("Banned User", '`${bUser} with ID ${bUser.id}`')
+    .addField("Banned By", '`<@${message.author.id}> with ID ${message.author.id}`')
+    .addField("Banned In", 'message.channel')
+    .addField("Time", 'message.createdAt')
+    .addField("Reason", 'bReason');
 
     let incidentchannel = message.guild.channels.find(`name`, "incidents");
     if(!incidentchannel) return message.channel.send("Can't find incidents channel.");
@@ -69,38 +70,33 @@ bot.on("message", async message => {
     message.guild.member(bUser).ban(bReason);
     incidentchannel.send(banEmbed);
 
-
     return;
   }
 
 
   if(cmd === `${prefix}report`){
 
-
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!rUser) return message.channel.send("Couldn't find user.");
     let rreason = args.join(" ").slice(22);
 
     let reportEmbed = new Discord.RichEmbed()
-    .setDescription("Reports")
+    .setTitle("Reports")
     .setColor("#15f153")
-    .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
-    .addField("Reported By", `${message.author} with ID: ${message.author.id}`)
-    .addField("Channel", message.channel)
-    .addField("Time", message.createdAt)
-    .addField("Reason", rreason);
+    .addField("Reported User", '`${rUser} with ID: ${rUser.id}`')
+    .addField("Reported By", '`${message.author} with ID: ${message.author.id}`')
+    .addField("Channel", 'message.channel')
+    .addField("Time",'message.createdAt')
+    .addField("Reason", 'rreason');
 
     let reportschannel = message.guild.channels.find(`name`, "reports");
     if(!reportschannel) return message.channel.send("Couldn't find reports channel.");
-
 
     message.delete().catch(O_o=>{});
     reportschannel.send(reportEmbed);
 
     return;
   }
-
-
 
 
   if(cmd === `${prefix}serverinfo`){
@@ -110,10 +106,10 @@ bot.on("message", async message => {
     .setDescription("Server Information")
     .setColor("#15f153")
     .setThumbnail(sicon)
-    .addField("Server Name", message.guild.name)
-    .addField("Created On", message.guild.createdAt)
-    .addField("You Joined", message.member.joinedAt)
-    .addField("Total Members", message.guild.memberCount);
+    .addField("Server Name", 'message.guild.name')
+    .addField("Created On", 'message.guild.createdAt')
+    .addField("You Joined", 'message.member.joinedAt')
+    .addField("Total Members", 'message.guild.memberCount');
 
     return message.channel.send(serverembed);
  }
@@ -121,15 +117,14 @@ bot.on("message", async message => {
     if (command === `${prefix}botinfo`) {
 
         var botIcon = bot.user.displayAvatarURL
-
         var botEmbed = new discord.RichEmbed()
             .setDescription("Bot Info")
             .setColor("#4286f4")
             .setThumbnail(botIcon)
-            .addField("Username:", bot.user.username)
-            .addField("Gemaakt op:", bot.user.createdAt)
-            .addField("Versie:", botConfig.version)
-            .addField("Maker/Developer:", botConfig.creator);
+            .addField("Username:", 'bot.user.username')
+            .addField("Gemaakt op:", 'bot.user.createdAt')
+            .addField("Versie:", 'botConfig.version')
+            .addField("Maker/Developer:", 'botConfig.creator');
 
         return message.channel.send(botEmbed);
     }
