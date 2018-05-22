@@ -1,7 +1,20 @@
-# Poof Bot
-A bot that is designed for pure moderations and fun in the future!
+| Get | ComingSoon | ERROR | License |
+| :---: | :---: | :---: | :---: |
+ [![Download](https://github.com/MrPooofles) | [![Discord](error)](error) | [![HitCount](http://hits.dwyl.io/CLADevs/CLARules.svg)](http://hits.dwyl.io/CLADevs/CLARules) | [![License](https://img.shields.io/github/license/CLADevs/CLARules.svg?label=License)](LICENSE)
+ 
+* If you want other features please [click here](https://github.com/StrikeDevelopment) and tell us what you want!
 
-I'm a little coder that planning to dive into hard/trihard coding in  the future!
+## Features:
 
-If you wanna recode my bot for PERSONAL use only it will be allowed but if your planning on sharing it and saying that is your code it will be not allowed because that is too bad for me incase u want me to help you you can contact me on Google mail:
-Joshuahumpz93@gmail.com
+- [x] Moderation Commands
+- [ ] Announcements
+- [ ] Welcome Message
+- [ ] Chat & Command Logger
+- [ ] Editable Prefix
+- [ ] Help Command
+
+ ## Need Help?
+  - [x] Prefix Is Set To Be - !
+
+ ## Developers:
+ * Strike Development - Main Developers
